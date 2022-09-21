@@ -25,3 +25,11 @@
 3. Test the APIs!
 
 (Example response are included in the json file)
+
+# Viewing Database (Mariadb)
+To view or access the database, set up the connection in sqlworkbench using the below configuration once the dockers are build and running:
+
+<img width="666" alt="image" src="https://user-images.githubusercontent.com/28836136/191397954-2620521c-421f-4011-809f-80c2a5295248.png">
+
+The password to access the database is: root
+
