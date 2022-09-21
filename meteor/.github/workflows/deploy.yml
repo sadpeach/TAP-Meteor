@@ -1,0 +1,38 @@
+name: 
+  cloudrun-deploy
+on: 
+  [push, pull_request]
+jobs:
+
+  deploy:
+
+    name: Setup Google Cloud Account
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT }}/${{ secrets.GCP_APPLICATION }}
+      DB_URL: ${{ secrets.DB_URL }}
+    steps:
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    # Setup gcloud CLI
+    - name: Login
+      uses: 'google-github-actions/auth@v0'
+      with:
+        credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+
+    - name: Configure Docker
+      run: gcloud auth configure-docker --quiet
+
+    - name: Build Docker image
+      run: docker build . -t $IMAGE_NAME
+
+    - name: Test Docker image
+      run: docker run -it -d -p 5001:5001 $IMAGE_NAME 
+
+    - name: Push Docker image
+      run: docker push $IMAGE_NAME
+
+    - name: Deploy Docker image
+      run: gcloud run deploy ${{ secrets.GCP_PROJECT }} --image $IMAGE_NAME --region us-central1 --platform managed

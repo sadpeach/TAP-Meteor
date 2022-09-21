@@ -1,4 +1,4 @@
-from household import app
+from meteor import app
 import os
 
 if __name__ == '__main__':

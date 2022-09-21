@@ -30,5 +30,20 @@ services:
       # - ./db:/docker-entrypoint-initdb.d/:ro
       - meteorData:/var/lib/mysql
 
+   
+  # db_test:
+  #   #testing database
+  #   image: mariadb:latest
+  #   container_name: mariadb-test
+  #   restart: on-failure
+  #   ports:
+  #     - "33001:3307"
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: meteor
+  #     MYSQL_USER: root
+  #   volumes:
+  #     - ./db:/docker-entrypoint-initdb.d/:ro
+
 volumes:
   meteorData: 
