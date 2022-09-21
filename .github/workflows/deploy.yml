@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT }}/${{ secrets.GCP_APPLICATION }}
-      DB_URL: ${{ secrets.DB_URL }}
+      # DB_URL: ${{ secrets.DB_URL }}
     steps:
 
     - name: Checkout repository
