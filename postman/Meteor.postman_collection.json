@@ -33,7 +33,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"householdType\":\"Landed\",\n    \"housingUnit\": \"#09-336\"\n}",
+					"raw": "{\n    \"householdType\":\"Landed\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -61,7 +61,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"householdType\":\"Landed\",\n    \"housingUnit\": 1\n}",
+							"raw": "{\n    \"householdType\":\"Landed\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -87,11 +87,11 @@
 					"header": [
 						{
 							"key": "Server",
-							"value": "Werkzeug/2.2.2 Python/3.10.7"
+							"value": "Werkzeug/2.2.2 Python/3.9.13"
 						},
 						{
 							"key": "Date",
-							"value": "Sat, 17 Sep 2022 14:35:51 GMT"
+							"value": "Wed, 21 Sep 2022 05:53:26 GMT"
 						},
 						{
 							"key": "Content-Type",
@@ -99,7 +99,7 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "138"
+							"value": "123"
 						},
 						{
 							"key": "Access-Control-Allow-Origin",
@@ -111,7 +111,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"data\": {\n        \"householdType\": \"Landed\",\n        \"housingUnit\": \"1\",\n        \"id\": 1\n    },\n    \"message\": \"Successfully created new houseHold\"\n}"
+					"body": "{\n    \"data\": {\n        \"householdId\": 2,\n        \"householdType\": \"Landed\"\n    },\n    \"message\": \"Successfully created new houseHold\"\n}"
 				}
 			]
 		},
@@ -122,7 +122,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n            \"name\" : \"Kim\",\n            \"maritalStatus\" : \"single\",\n            \"spouseId\":1,\n            \"occupationType\" : \"Employed\",\n            \"annualIncome\" : 3000,\n            \"dob\" : \"2018-12-25\"\n}",
+					"raw": "{\n            \"name\" : \"Jia Yi\",\n            \"maritalStatus\" : \"Single\",\n            \"occupationType\" : \"Student\",\n            \"annualIncome\" : 0,\n            \"dob\" : \"2018-12-25\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -130,7 +130,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{url}}/household/api/v1/addMember?housingUnit=%2309-337",
+					"raw": "{{url}}/household/api/v1/addMember?householdId=2",
 					"host": [
 						"{{url}}"
 					],
@@ -142,8 +142,8 @@
 					],
 					"query": [
 						{
-							"key": "housingUnit",
-							"value": "%2309-337"
+							"key": "householdId",
+							"value": "2"
 						}
 					]
 				}
@@ -259,11 +259,11 @@
 					"header": [
 						{
 							"key": "Server",
-							"value": "Werkzeug/2.2.2 Python/3.10.7"
+							"value": "Werkzeug/2.2.2 Python/3.8.14"
 						},
 						{
 							"key": "Date",
-							"value": "Mon, 19 Sep 2022 16:51:49 GMT"
+							"value": "Wed, 21 Sep 2022 07:29:51 GMT"
 						},
 						{
 							"key": "Content-Type",
@@ -271,7 +271,7 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "1851"
+							"value": "1953"
 						},
 						{
 							"key": "Access-Control-Allow-Origin",
@@ -283,7 +283,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"data\": [\n        {\n            \"householdMembers\": [\n                {\n                    \"annualIncome\": 3000,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 4,\n                    \"maritalStatus\": \"single\",\n                    \"name\": \"Jerry\",\n                    \"occupationType\": \"Employed\",\n                    \"spouse\": null,\n                    \"spouseId\": null\n                }\n            ],\n            \"householdType\": \"Landed\",\n            \"housingUnit\": \"#09-337\"\n        },\n        {\n            \"householdMembers\": [\n                {\n                    \"annualIncome\": 5000,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 1,\n                    \"maritalStatus\": \"married\",\n                    \"name\": \"Samuel\",\n                    \"occupationType\": \"engineer\",\n                    \"spouse\": {\n                        \"annualIncome\": 5000,\n                        \"dob\": \"2018-12-25T00:00:00\",\n                        \"id\": 2,\n                        \"maritalStatus\": \"married\",\n                        \"name\": \"Jane\",\n                        \"occupationType\": \"engineer\",\n                        \"spouseId\": 1\n                    },\n                    \"spouseId\": 2\n                },\n                {\n                    \"annualIncome\": 5000,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 2,\n                    \"maritalStatus\": \"married\",\n                    \"name\": \"Jane\",\n                    \"occupationType\": \"engineer\",\n                    \"spouse\": {\n                        \"annualIncome\": 5000,\n                        \"dob\": \"2018-12-25T00:00:00\",\n                        \"id\": 1,\n                        \"maritalStatus\": \"married\",\n                        \"name\": \"Samuel\",\n                        \"occupationType\": \"engineer\",\n                        \"spouseId\": 2\n                    },\n                    \"spouseId\": 1\n                },\n                {\n                    \"annualIncome\": 0,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 3,\n                    \"maritalStatus\": \"single\",\n                    \"name\": \"Ben\",\n                    \"occupationType\": \"student\",\n                    \"spouse\": null,\n                    \"spouseId\": null\n                }\n            ],\n            \"householdType\": \"Landed\",\n            \"housingUnit\": \"#09-339\"\n        }\n    ],\n    \"message\": \"Successfully retrieved all houseHolds\"\n}"
+					"body": "{\n    \"data\": [\n        {\n            \"householdId\": 1,\n            \"householdMembers\": [\n                {\n                    \"annualIncome\": 0,\n                    \"dob\": \"2016-12-25T00:00:00\",\n                    \"householdId\": 1,\n                    \"id\": 1,\n                    \"maritalStatus\": \"Single\",\n                    \"name\": \"James\",\n                    \"occupationType\": \"Student\",\n                    \"spouseId\": null\n                },\n                {\n                    \"annualIncome\": 20000,\n                    \"dob\": \"1964-12-25T00:00:00\",\n                    \"householdId\": 1,\n                    \"id\": 2,\n                    \"maritalStatus\": \"Married\",\n                    \"name\": \"Mary\",\n                    \"occupationType\": \"Employed\",\n                    \"spouse\": {\n                        \"annualIncome\": 90000,\n                        \"dob\": \"1964-12-25T00:00:00\",\n                        \"householdId\": 1,\n                        \"id\": 3,\n                        \"maritalStatus\": \"Married\",\n                        \"name\": \"James\",\n                        \"occupationType\": \"Employed\",\n                        \"spouseId\": 2\n                    },\n                    \"spouseId\": 3\n                },\n                {\n                    \"annualIncome\": 90000,\n                    \"dob\": \"1964-12-25T00:00:00\",\n                    \"householdId\": 1,\n                    \"id\": 3,\n                    \"maritalStatus\": \"Married\",\n                    \"name\": \"James\",\n                    \"occupationType\": \"Employed\",\n                    \"spouse\": {\n                        \"annualIncome\": 20000,\n                        \"dob\": \"1964-12-25T00:00:00\",\n                        \"householdId\": 1,\n                        \"id\": 2,\n                        \"maritalStatus\": \"Married\",\n                        \"name\": \"Mary\",\n                        \"occupationType\": \"Employed\",\n                        \"spouseId\": 3\n                    },\n                    \"spouseId\": 2\n                }\n            ],\n            \"householdType\": \"HDB\"\n        },\n        {\n            \"householdId\": 2,\n            \"householdMembers\": [\n                {\n                    \"annualIncome\": 0,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"householdId\": 2,\n                    \"id\": 4,\n                    \"maritalStatus\": \"Single\",\n                    \"name\": \"Jia Yi\",\n                    \"occupationType\": \"Student\",\n                    \"spouseId\": null\n                }\n            ],\n            \"householdType\": \"Landed\"\n        }\n    ],\n    \"message\": \"Successfully retrieved all houseHolds\"\n}"
 				}
 			]
 		},
@@ -293,7 +293,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/household/api/v1/getHouseholdById?householdId=%2309-337",
+					"raw": "{{url}}/household/api/v1/getHouseholdById?householdId=1",
 					"host": [
 						"{{url}}"
 					],
@@ -306,7 +306,7 @@
 					"query": [
 						{
 							"key": "householdId",
-							"value": "%2309-337"
+							"value": "1"
 						}
 					]
 				}
@@ -318,7 +318,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/household/api/v1/getHouseholdById?householdId=%2309-339",
+							"raw": "{{url}}/household/api/v1/getHouseholdById?householdId=1",
 							"host": [
 								"{{url}}"
 							],
@@ -331,7 +331,7 @@
 							"query": [
 								{
 									"key": "householdId",
-									"value": "%2309-339"
+									"value": "1"
 								}
 							]
 						}
@@ -341,32 +341,36 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
-							"key": "Server",
-							"value": "Werkzeug/2.2.2 Python/3.10.7"
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 19 Sep 2022 16:49:46 GMT"
-						},
-						{
-							"key": "Content-Type",
+							"key": "content-type",
 							"value": "application/json"
 						},
 						{
-							"key": "Content-Length",
-							"value": "1353"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
+							"key": "access-control-allow-origin",
 							"value": "*"
 						},
 						{
-							"key": "Connection",
-							"value": "close"
+							"key": "X-Cloud-Trace-Context",
+							"value": "2164de935e2c786707444a29bd96a918;o=1"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Sep 2022 09:33:04 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1461"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\""
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"data\": {\n        \"householdMembers\": [\n            {\n                \"annualIncome\": 5000,\n                \"dob\": \"2018-12-25T00:00:00\",\n                \"id\": 1,\n                \"maritalStatus\": \"married\",\n                \"name\": \"Samuel\",\n                \"occupationType\": \"engineer\",\n                \"spouse\": {\n                    \"annualIncome\": 5000,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 2,\n                    \"maritalStatus\": \"married\",\n                    \"name\": \"Jane\",\n                    \"occupationType\": \"engineer\",\n                    \"spouseId\": 1\n                },\n                \"spouseId\": 2\n            },\n            {\n                \"annualIncome\": 5000,\n                \"dob\": \"2018-12-25T00:00:00\",\n                \"id\": 2,\n                \"maritalStatus\": \"married\",\n                \"name\": \"Jane\",\n                \"occupationType\": \"engineer\",\n                \"spouse\": {\n                    \"annualIncome\": 5000,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 1,\n                    \"maritalStatus\": \"married\",\n                    \"name\": \"Samuel\",\n                    \"occupationType\": \"engineer\",\n                    \"spouseId\": 2\n                },\n                \"spouseId\": 1\n            },\n            {\n                \"annualIncome\": 0,\n                \"dob\": \"2018-12-25T00:00:00\",\n                \"id\": 3,\n                \"maritalStatus\": \"single\",\n                \"name\": \"Ben\",\n                \"occupationType\": \"student\",\n                \"spouse\": null,\n                \"spouseId\": null\n            }\n        ],\n        \"householdType\": \"Landed\",\n        \"housingUnit\": \"#09-339\"\n    },\n    \"message\": \"Successfully retrieved houseHolds\"\n}"
+					"body": "{\n    \"data\": {\n        \"householdId\": 1,\n        \"householdMembers\": [\n            {\n                \"annualIncome\": 0,\n                \"dob\": \"2016-12-25T00:00:00\",\n                \"householdId\": 1,\n                \"id\": 1,\n                \"maritalStatus\": \"Single\",\n                \"name\": \"James\",\n                \"occupationType\": \"Student\",\n                \"spouseId\": null\n            },\n            {\n                \"annualIncome\": 20000,\n                \"dob\": \"1964-12-25T00:00:00\",\n                \"householdId\": 1,\n                \"id\": 2,\n                \"maritalStatus\": \"Married\",\n                \"name\": \"Mary\",\n                \"occupationType\": \"Employed\",\n                \"spouse\": {\n                    \"annualIncome\": 90000,\n                    \"dob\": \"1964-12-25T00:00:00\",\n                    \"householdId\": 1,\n                    \"id\": 3,\n                    \"maritalStatus\": \"Married\",\n                    \"name\": \"James\",\n                    \"occupationType\": \"Employed\",\n                    \"spouseId\": 2\n                },\n                \"spouseId\": 3\n            },\n            {\n                \"annualIncome\": 90000,\n                \"dob\": \"1964-12-25T00:00:00\",\n                \"householdId\": 1,\n                \"id\": 3,\n                \"maritalStatus\": \"Married\",\n                \"name\": \"James\",\n                \"occupationType\": \"Employed\",\n                \"spouse\": {\n                    \"annualIncome\": 20000,\n                    \"dob\": \"1964-12-25T00:00:00\",\n                    \"householdId\": 1,\n                    \"id\": 2,\n                    \"maritalStatus\": \"Married\",\n                    \"name\": \"Mary\",\n                    \"occupationType\": \"Employed\",\n                    \"spouseId\": 3\n                },\n                \"spouseId\": 2\n            }\n        ],\n        \"householdType\": \"HDB\"\n    },\n    \"message\": \"Successfully retrieved household by Id\"\n}"
 				}
 			]
 		},
@@ -466,32 +470,36 @@
 					"_postman_previewlanguage": "json",
 					"header": [
 						{
-							"key": "Server",
-							"value": "Werkzeug/2.2.2 Python/3.10.7"
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 20 Sep 2022 16:22:25 GMT"
-						},
-						{
-							"key": "Content-Type",
+							"key": "content-type",
 							"value": "application/json"
 						},
 						{
-							"key": "Content-Length",
-							"value": "4129"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
+							"key": "access-control-allow-origin",
 							"value": "*"
 						},
 						{
-							"key": "Connection",
-							"value": "close"
+							"key": "X-Cloud-Trace-Context",
+							"value": "8e87adadc032ae859ac6bf5716b92a03;o=1"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 21 Sep 2022 11:56:19 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Google Frontend"
+						},
+						{
+							"key": "Content-Length",
+							"value": "3143"
+						},
+						{
+							"key": "Alt-Svc",
+							"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\""
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"data\": {\n        \"#09-336\": {\n            \"Baby Sunshine Grant\": [],\n            \"Elder Bonus\": [],\n            \"Multigeneration Scheme\": [],\n            \"Student Encouragement Bonus\": [],\n            \"YOLO GST Grant\": []\n        },\n        \"#09-337\": {\n            \"Baby Sunshine Grant\": [],\n            \"Elder Bonus\": [\n                {\n                    \"annualIncome\": 3000,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 1,\n                    \"maritalStatus\": \"single\",\n                    \"name\": \"Jerry\",\n                    \"occupationType\": \"Student\",\n                    \"spouse\": {\n                        \"annualIncome\": 3000,\n                        \"dob\": \"2018-12-25T00:00:00\",\n                        \"id\": 2,\n                        \"maritalStatus\": \"single\",\n                        \"name\": \"Kim\",\n                        \"occupationType\": \"Employed\"\n                    },\n                    \"spouseId\": 2\n                },\n                {\n                    \"annualIncome\": 3000,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 2,\n                    \"maritalStatus\": \"single\",\n                    \"name\": \"Kim\",\n                    \"occupationType\": \"Employed\",\n                    \"spouse\": {\n                        \"annualIncome\": 3000,\n                        \"dob\": \"2018-12-25T00:00:00\",\n                        \"id\": 1,\n                        \"maritalStatus\": \"single\",\n                        \"name\": \"Jerry\",\n                        \"occupationType\": \"Student\"\n                    },\n                    \"spouseId\": 1\n                },\n                {\n                    \"annualIncome\": 3000,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 3,\n                    \"maritalStatus\": \"single\",\n                    \"name\": \"Kim\",\n                    \"occupationType\": \"Student\",\n                    \"spouse\": null,\n                    \"spouseId\": null\n                }\n            ],\n            \"Multigeneration Scheme\": [\n                {\n                    \"annualIncome\": 3000,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 1,\n                    \"maritalStatus\": \"single\",\n                    \"name\": \"Jerry\",\n                    \"occupationType\": \"Student\",\n                    \"spouse\": {\n                        \"annualIncome\": 3000,\n                        \"dob\": \"2018-12-25T00:00:00\",\n                        \"id\": 2,\n                        \"maritalStatus\": \"single\",\n                        \"name\": \"Kim\",\n                        \"occupationType\": \"Employed\"\n                    },\n                    \"spouseId\": 2\n                },\n                {\n                    \"annualIncome\": 3000,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 2,\n                    \"maritalStatus\": \"single\",\n                    \"name\": \"Kim\",\n                    \"occupationType\": \"Employed\",\n                    \"spouse\": {\n                        \"annualIncome\": 3000,\n                        \"dob\": \"2018-12-25T00:00:00\",\n                        \"id\": 1,\n                        \"maritalStatus\": \"single\",\n                        \"name\": \"Jerry\",\n                        \"occupationType\": \"Student\"\n                    },\n                    \"spouseId\": 1\n                },\n                {\n                    \"annualIncome\": 3000,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 3,\n                    \"maritalStatus\": \"single\",\n                    \"name\": \"Kim\",\n                    \"occupationType\": \"Student\",\n                    \"spouse\": null,\n                    \"spouseId\": null\n                }\n            ],\n            \"Student Encouragement Bonus\": [],\n            \"YOLO GST Grant\": [\n                {\n                    \"annualIncome\": 3000,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 1,\n                    \"maritalStatus\": \"single\",\n                    \"name\": \"Jerry\",\n                    \"occupationType\": \"Student\",\n                    \"spouse\": {\n                        \"annualIncome\": 3000,\n                        \"dob\": \"2018-12-25T00:00:00\",\n                        \"id\": 2,\n                        \"maritalStatus\": \"single\",\n                        \"name\": \"Kim\",\n                        \"occupationType\": \"Employed\"\n                    },\n                    \"spouseId\": 2\n                },\n                {\n                    \"annualIncome\": 3000,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 2,\n                    \"maritalStatus\": \"single\",\n                    \"name\": \"Kim\",\n                    \"occupationType\": \"Employed\",\n                    \"spouse\": {\n                        \"annualIncome\": 3000,\n                        \"dob\": \"2018-12-25T00:00:00\",\n                        \"id\": 1,\n                        \"maritalStatus\": \"single\",\n                        \"name\": \"Jerry\",\n                        \"occupationType\": \"Student\"\n                    },\n                    \"spouseId\": 1\n                },\n                {\n                    \"annualIncome\": 3000,\n                    \"dob\": \"2018-12-25T00:00:00\",\n                    \"id\": 3,\n                    \"maritalStatus\": \"single\",\n                    \"name\": \"Kim\",\n                    \"occupationType\": \"Student\",\n                    \"spouse\": null,\n                    \"spouseId\": null\n                }\n            ]\n        }\n    },\n    \"message\": \"Successfully retrieved all houseHolds\"\n}"
+					"body": "{\n    \"data\": {\n        \"1\": {\n            \"Baby Sunshine Grant\": {\n                \"eligibleMembers\": []\n            },\n            \"Elder Bonus\": {\n                \"eligibleMembers\": [\n                    {\n                        \"annualIncome\": 0,\n                        \"dob\": \"2016-12-25T00:00:00\",\n                        \"householdId\": 1,\n                        \"id\": 1,\n                        \"maritalStatus\": \"Single\",\n                        \"name\": \"James\",\n                        \"occupationType\": \"Student\",\n                        \"spouseId\": null\n                    },\n                    {\n                        \"annualIncome\": 20000,\n                        \"dob\": \"1964-12-25T00:00:00\",\n                        \"householdId\": 1,\n                        \"id\": 2,\n                        \"maritalStatus\": \"Married\",\n                        \"name\": \"Mary\",\n                        \"occupationType\": \"Employed\",\n                        \"spouseId\": 3\n                    },\n                    {\n                        \"annualIncome\": 90000,\n                        \"dob\": \"1964-12-25T00:00:00\",\n                        \"householdId\": 1,\n                        \"id\": 3,\n                        \"maritalStatus\": \"Married\",\n                        \"name\": \"James\",\n                        \"occupationType\": \"Employed\",\n                        \"spouseId\": 2\n                    }\n                ]\n            },\n            \"Multigeneration Scheme\": {\n                \"eligibleMembers\": [\n                    {\n                        \"annualIncome\": 0,\n                        \"dob\": \"2016-12-25T00:00:00\",\n                        \"householdId\": 1,\n                        \"id\": 1,\n                        \"maritalStatus\": \"Single\",\n                        \"name\": \"James\",\n                        \"occupationType\": \"Student\",\n                        \"spouseId\": null\n                    },\n                    {\n                        \"annualIncome\": 20000,\n                        \"dob\": \"1964-12-25T00:00:00\",\n                        \"householdId\": 1,\n                        \"id\": 2,\n                        \"maritalStatus\": \"Married\",\n                        \"name\": \"Mary\",\n                        \"occupationType\": \"Employed\",\n                        \"spouseId\": 3\n                    },\n                    {\n                        \"annualIncome\": 90000,\n                        \"dob\": \"1964-12-25T00:00:00\",\n                        \"householdId\": 1,\n                        \"id\": 3,\n                        \"maritalStatus\": \"Married\",\n                        \"name\": \"James\",\n                        \"occupationType\": \"Employed\",\n                        \"spouseId\": 2\n                    }\n                ]\n            },\n            \"Student Encouragement Bonus\": {\n                \"eligibleMembers\": []\n            },\n            \"YOLO GST Grant\": {\n                \"eligibleMembers\": []\n            }\n        },\n        \"2\": {\n            \"Baby Sunshine Grant\": {\n                \"eligibleMembers\": []\n            },\n            \"Elder Bonus\": {\n                \"eligibleMembers\": []\n            },\n            \"Multigeneration Scheme\": {\n                \"eligibleMembers\": [\n                    {\n                        \"annualIncome\": 0,\n                        \"dob\": \"2018-12-25T00:00:00\",\n                        \"householdId\": 2,\n                        \"id\": 4,\n                        \"maritalStatus\": \"Single\",\n                        \"name\": \"Jia Yi\",\n                        \"occupationType\": \"Student\",\n                        \"spouseId\": null\n                    }\n                ]\n            },\n            \"Student Encouragement Bonus\": {\n                \"eligibleMembers\": []\n            },\n            \"YOLO GST Grant\": {\n                \"eligibleMembers\": [\n                    {\n                        \"annualIncome\": 0,\n                        \"dob\": \"2018-12-25T00:00:00\",\n                        \"householdId\": 2,\n                        \"id\": 4,\n                        \"maritalStatus\": \"Single\",\n                        \"name\": \"Jia Yi\",\n                        \"occupationType\": \"Student\",\n                        \"spouseId\": null\n                    }\n                ]\n            }\n        }\n    },\n    \"message\": \"Successfully retrieved all houseHolds\"\n}"
 				}
 			]
 		}
