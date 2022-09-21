@@ -9,7 +9,7 @@ jobs:
     name: Setup Google Cloud Account
     runs-on: ubuntu-latest
     env:
-      IMAGE_NAME: gcr.io/${{ Deployment.GCP_PROJECT }}/${{ Deployment.GCP_APPLICATION }}
+      IMAGE_NAME: gcr.io/${{ secrets.GCP_PROJECT }}/${{ secrets.GCP_APPLICATION }}
     steps:
 
     - name: Checkout repository
@@ -17,13 +17,13 @@ jobs:
 
     - shell: 'bash'
       run: |-
-        echo '${{ Deployment.GCP_CREDENTIALS }} , names ${{ Deployment.GCP_PROJECT }} ' | wc -c
+        echo '${{ secrets.GCP_CREDENTIALS }} , names ${{ secrets.GCP_PROJECT }} ' | wc -c
 
     # Setup gcloud CLI
     - name: Login
       uses: 'google-github-actions/auth@v0'
       with:
-        credentials_json: ${{ Deployment.GCP_CREDENTIALS }}
+        credentials_json: ${{ secrets.GCP_CREDENTIALS }}
 
     - name: Configure Docker
       run: gcloud auth configure-docker --quiet
@@ -38,4 +38,4 @@ jobs:
       run: docker push $IMAGE_NAME
 
     - name: Deploy Docker image
-      run: gcloud run deploy ${{ Deployment.GCP_PROJECT }} --image $IMAGE_NAME --region us-central1 --platform managed
+      run: gcloud run deploy ${{ secrets.GCP_PROJECT }} --image $IMAGE_NAME --region us-central1 --platform managed
